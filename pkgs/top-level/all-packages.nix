@@ -18071,6 +18071,10 @@ with pkgs;
 
   nauty = callPackage ../applications/science/math/nauty {};
 
+  petscComplex = callPackage ../development/libraries/science/math/petsc { scalarType="complex"; };
+  petscReal = callPackage ../development/libraries/science/math/petsc { scalarType="real"; };
+  petsc = petscComplex;
+
   sage = callPackage ../applications/science/math/sage { };
 
   suitesparse_4_2 = callPackage ../development/libraries/science/math/suitesparse/4.2.nix { };
