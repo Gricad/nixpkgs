@@ -53,7 +53,7 @@ buildPythonPackage rec {
   # if openssh is not present. E.g. h5py with mpi support.
   propagatedBuildInputs = [ openssh ];
 
-  disabled = isPy3k || isPyPy;
+  #  disabled = isPy3k || isPyPy;
 
   # Timing out communicating between processes when sandboxing enabled.
   doCheck = false;

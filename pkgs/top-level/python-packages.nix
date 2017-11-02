@@ -527,6 +527,8 @@ in {
 
   astor = callPackage ../development/python-modules/astor {};
 
+  astunparse = callPackage ../development/python-modules/astunparse { };
+
   asyncio = if (pythonAtLeast "3.3") then buildPythonPackage rec {
     name = "asyncio-${version}";
     version = "3.4.3";
@@ -4613,11 +4615,11 @@ in {
 
   decorator = buildPythonPackage rec {
     name = "decorator-${version}";
-    version = "4.0.11";
+    version = "4.1.2";
 
     src = pkgs.fetchurl {
       url = "mirror://pypi/d/decorator/${name}.tar.gz";
-      sha256 = "953d6bf082b100f43229cf547f4f97f97e970f5ad645ee7601d55ff87afdfe76";
+      sha256 = "1d8npb11kxyi36mrvjdpcjij76l5zfyrz2f820brf0l0rcw4vdkw";
     };
 
     meta = {
@@ -7288,6 +7290,8 @@ in {
 
   pysrt = callPackage ../development/python-modules/pysrt { };
 
+  pythran = callPackage ../development/python-modules/pythran { };
+
   pytools = buildPythonPackage rec {
     name = "pytools-${version}";
     version = "2017.4";
@@ -9120,6 +9124,12 @@ in {
       license = licenses.mit;
     };
   };
+
+
+  fluiddyn = callPackage ../development/python-modules/fluiddyn { };
+
+  fluidfft = callPackage ../development/python-modules/fluidfft { };
+
   flup = buildPythonPackage (rec {
     name = "flup-1.0.2";
     disabled = isPy3k;
@@ -9319,6 +9329,8 @@ in {
       sha256 = "1lqfzl3z3pkxakgbcrfy6x7x0fp3q18mj5lpz103ljj7fdqha70m";
     };
   };
+
+  gast = callPackage ../development/python-modules/gast { };
 
   gcovr = buildPythonPackage rec {
     name = "gcovr-2.4";
@@ -23767,6 +23779,9 @@ EOF
       license = licenses.bsd3;
     };
   };
+
+
+  networkx2 = callPackage ../development/python-modules/networkx {};
 
   ofxclient = callPackage ../development/python-modules/ofxclient {};
 
