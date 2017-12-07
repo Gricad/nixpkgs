@@ -1,5 +1,5 @@
 { stdenv, buildPythonPackage, fetchPypi
-, fftw, pyfftw, numpy, Mako, mpi4py, fluiddyn, psutil, subprocess32, future, matplotlib, pythran, isPy3k }:
+, fftw, pyfftw, numpy, Mako, mpi4py, fluiddyn, psutil, subprocess32, future, matplotlib, pythran, isPy3k, gast }:
 
 buildPythonPackage rec {
   version = "0.1.0";
@@ -12,7 +12,7 @@ buildPythonPackage rec {
   };
 
   buildInputs = [ 
-    fftw pyfftw Mako mpi4py fluiddyn psutil future matplotlib pythran 
+    fftw pyfftw Mako mpi4py fluiddyn psutil future matplotlib pythran gast
   ] ++ stdenv.lib.optional (!isPy3k) subprocess32;
 
   propagatedBuildInputs = [ numpy ];
